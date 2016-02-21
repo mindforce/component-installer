@@ -1,0 +1,37 @@
+{
+    "name": "mindforce/component-installer",
+    "description": "A composer component installer for CakePHP 3.0+",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mindforce Group",
+            "homepage": "http://mindforce.me"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "composer-plugin-api": "^1.0"
+    },
+    "require-dev": {
+        "composer/composer": "1.0.*@dev",
+        "cakephp/cakephp-codesniffer": "dev-master"
+    },
+    "replace": {
+        "robloach/component-installer": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cake\\Composer\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cake\\Test\\Composer\\": "tests"
+        }
+    },
+    "extra": {
+        "class": "Cake\\Composer\\Installer\\ComponentInstallerPlugin"
+    },
+    "minimum-stability": "dev"
+}

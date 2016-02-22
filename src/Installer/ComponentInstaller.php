@@ -40,7 +40,9 @@ class ComponentInstaller extends LibraryInstaller
         $config = $composer->getConfig();
 
         $vendorDir = realpath($config->get('vendor-dir'));
-        static::setConfig($config->get('component'));
+        if($config->has('component')){
+            static::setConfig($config->get('component'));
+        }
 
         $packages = $composer->getRepositoryManager()->getLocalRepository()->getPackages();
         $components = static::determineComponents($packages);

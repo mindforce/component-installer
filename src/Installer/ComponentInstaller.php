@@ -157,13 +157,14 @@ class ComponentInstaller extends LibraryInstaller
 
     protected static function excluded($path)
     {
-        if(empty(static::getConfigParam('exclude'))){
+        $exclude = static::getConfigParam('exclude');
+        if(empty($exclude)){
             return false;
         }
         if(empty($path)){
             return true;
         }
-        foreach(static::getConfigParam('exclude') as $regex){
+        foreach($exclude as $regex){
             if(preg_match("/".$regex."/i", $path)){
                 return true;
             }
